@@ -25,6 +25,6 @@
   },
   "scripts": {
     "build": "webpack",
-    "lint": "eslint ."
+    "lint": "eslint . --ext .js,.ts,.tsx"
   }
 }
