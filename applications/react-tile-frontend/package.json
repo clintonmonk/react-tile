@@ -33,6 +33,6 @@
   "scripts": {
     "build:dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint . --ext .js,.ts,.tsx"
+    "lint": "eslint ./src --ext .js,.ts,.tsx"
   }
 }
