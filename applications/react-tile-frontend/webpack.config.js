@@ -36,6 +36,10 @@ module.exports = (env, argv) => {
       runtimeChunk: true,
     },
 
+    performance: {
+      hints: isModeProduction ? 'error' : false,
+    },
+
     module: {
       strictExportPresence: true,
       rules: [
