@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = (env, argv) => {
   const mode = argv.mode === 'development' ? 'development' : 'production';
   const isModeProduction = mode === 'production';
+  const outputDir = path.resolve(__dirname, 'dist');
 
   return {
     mode,
@@ -12,11 +13,15 @@ module.exports = (env, argv) => {
 
     devtool: !isModeProduction ? 'cheap-module-source-map' : false,
 
+    devServer: {
+      contentBase: outputDir,
+    },
+
     entry: './src/index.tsx',
 
     output: {
       filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
+      path: outputDir,
       futureEmitAssets: true,
     },
 
